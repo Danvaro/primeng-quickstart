@@ -1,6 +1,8 @@
 export interface Car {
-    vin;
-    year;
-    brand;
-    color;
+    datum;
+    correspondentie;
+    behandelaar;
+    status;
 }
+
+

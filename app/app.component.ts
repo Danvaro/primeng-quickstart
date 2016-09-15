@@ -3,7 +3,7 @@ import {Car} from './cars/car';
 import {CarService} from './cars/carservice';
 
 class PrimeCar implements Car {
-    constructor(public vin?, public year?, public brand?, public color?) {}
+    constructor(public datum?, public correspondentie?, public behandelaar?, public status?) {}
 }
 
 @Component({
@@ -12,15 +12,15 @@ class PrimeCar implements Car {
 })
 export class AppComponent {
 
-	displayDialog: boolean;
+	//displayDialog: boolean;
 
-    car: Car = new PrimeCar();
+    //car: Car = new PrimeCar();
 
-    selectedCar: Car;
+    //selectedCar: Car;
 
-    newCar: boolean;
+    //newCar: boolean;
 
-    cars: Car[];
+    //cars: Car[];
 
     constructor(private carService: CarService) { }
 
@@ -28,13 +28,13 @@ export class AppComponent {
         this.carService.getCarsMedium().then(cars => this.cars = cars);
     }
 
-    showDialogToAdd() {
+    /*showDialogToAdd() {
         this.newCar = true;
         this.car = new PrimeCar();
         this.displayDialog = true;
-    }
+    }*/
 
-    save() {
+    /*save() {
         if(this.newCar)
             this.cars.push(this.car);
         else
@@ -42,29 +42,29 @@ export class AppComponent {
 
         this.car = null;
         this.displayDialog = false;
-    }
+    }*/
 
-    delete() {
+    /*(delete() {
         this.cars.splice(this.findSelectedCarIndex(), 1);
         this.car = null;
         this.displayDialog = false;
-    }
+    }*/
 
-    onRowSelect(event) {
+    /*onRowSelect(event) {
         this.newCar = false;
         this.car = this.cloneCar(event.data);
         this.displayDialog = true;
-    }
+    }*/
 
-    cloneCar(c: Car): Car {
+    /*cloneCar(c: Car): Car {
         let car = new PrimeCar();
         for(let prop in c) {
             car[prop] = c[prop];
         }
         return car;
-    }
+    }*/
 
-    findSelectedCarIndex(): number {
+    /*findSelectedCarIndex(): number {
         return this.cars.indexOf(this.selectedCar);
-    }
+    }*/
 }
